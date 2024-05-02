@@ -134,8 +134,12 @@ app.get("/customers/:customerName", (req, res) => {
 
 // ---------------------------------------------------------------------------------------------
 
-let PORT = process.env.PORT;
-let HOST_NAME = process.env.HOST_NAME;
+let PORT = process.env.PORT || 3000 || 4000 || 5000;
+let HOST_NAME =
+  process.env.HOST_NAME ||
+  "13.228.225.19" ||
+  "18.142.128.26" ||
+  "54.254.162.138";
 
 app.listen(PORT, HOST_NAME, () => {
   console.log(`server is listening on port ${PORT}`);
